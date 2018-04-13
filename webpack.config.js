@@ -1,12 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 module.exports = {
-    entry: './index.js',
+    entry: './Index.js',
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
@@ -38,7 +37,7 @@ module.exports = {
                 })
             },
             {
-                test: /\.(png|jpg|gif)$/,
+                test: /\.(png|jpg|gif|svg)$/,
                 use: [
                   {
                     loader: 'file-loader',
@@ -49,11 +48,11 @@ module.exports = {
         ]
     },
     plugins: [
+        new ExtractTextPlugin("styles.css"),
         new HtmlWebpackPlugin({
             title: 'App',
-            template: 'index.html'
+            template: 'Index.html'
         }),
-        new UglifyJsPlugin(),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': '"development"'
         })   
