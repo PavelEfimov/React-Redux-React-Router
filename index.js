@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+//import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
-
+import { BrowserRouter as Router } from 'react-router-dom';
 import App from './Scripts/App';
 
 import rootReducer from './Scripts/reducers/Index';
@@ -18,8 +18,9 @@ const store = createStore(rootReducer,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
 
 render(
-    <BrowserRouter>
         <Provider store={store}>
-        <App />
+        <Router>
+            <App />
+        </Router>    
         </Provider>
-    </BrowserRouter>, document.getElementById('root'));
+    , document.getElementById('root'));

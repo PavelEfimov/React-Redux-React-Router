@@ -1,6 +1,8 @@
-export default (text) => (
+export default (name, comment, id) => (
     {
         type: 'ADD_COMMENT',
-        text: text
+        name: name,
+        comment: comment,
+        id: id
     }
 )
