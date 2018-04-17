@@ -2,13 +2,13 @@ import React from 'react';
 
 import PhotoGrid from './PhotoGrid';
 
-const Main = ({ data, onIncreaseLikes }) => (
-   <div> 
-        {data.map( (item, index) =>{ 
+import '../../Styles/Main.css';
 
-            //item.onIncreaseLikes = onIncreaseLikes
-            return <PhotoGrid {...{ item, onIncreaseLikes }} key = { index }/>
-        })}
+const Main = ({ data, onIncreaseLikes }) => (
+   <div className='main'> 
+        { data.map( (item, index) => (
+             <PhotoGrid { ...{ item, onIncreaseLikes } } key = { index }/>
+        )) }
     </div>    
 );
 

@@ -17,20 +17,20 @@ class PhotoGrid extends Component {
 
     render() { 
         const { item: { likes, url, id, caption, comments} } = this.props;
-        return(
-            <div className='photoGrid'>
-                <img src={url} alt='image' className='photoGrid-image'/>
+        const { increaseLikes } = this
+        return (
+            <div className = 'photoGrid'>
+                <img src = { url } alt = 'image' className = 'photoGrid-image' />
                 <div className='photoGrid-description'>
                     <span>{ caption }</span>
                 </div>
-                <div className='photoGrid-floatFix'>
-                    <button className='photoGrid-button button-first' onClick={this.increaseLikes}>
-                        <img src={ like } alt='likes: '/>{likes}
+                <div className = 'photoGrid-floatFix' >
+                    <button className = 'photoGrid-button button-first' onClick = { increaseLikes }>
+                        <img src = { like } alt = 'likes: '/>{ likes }
                     </button>
-                    <span>{}</span>
-                    <Link to={`/Home/Posts/${id}`} >
-                        <button className='photoGrid-button button-second'>
-                            <img src={ comment } alt='comments: '/>{comments.length}
+                    <Link to = { `/Home/Posts/${id}` } >
+                        <button className = 'photoGrid-button button-second' >
+                            <img src = { comment } alt = 'comments: ' />{ comments.length }
                         </button>
                     </Link>
                 </div>

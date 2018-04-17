@@ -1,24 +1,4 @@
-const initialState = [ 
-    {
-        id: 'firgreoi3409',
-        url: 'http://www.takefoto.ru/userfiles/image/Dlya%20Statey/09.09.2014/rassvet_zakat/rassvet_zakat_9.jpg',
-        likes: 23,
-        caption: 'something beautiful',
-        comments: [
-            {
-                name: 'Paul',
-                comment: 'Cool!!' 
-            }
-        ]
-    }, 
-    {
-        id: 'oktrgfep044',
-        url: 'http://www.bugaga.ru/uploads/posts/2016-11/1479306641_detenysh-tyulenya-1.jpg',
-        likes: 19,
-        caption: 'chto eto za hyina())(',
-        comments: []
-    }
-];
+import initialState from './InitialState';
 
 let newState;
 

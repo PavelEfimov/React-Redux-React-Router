@@ -1,5 +1,6 @@
 import React from 'react';
-import {Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+
 const Status = ({ code, children }) => (
     <Route render={({ staticContext }) => {
       if (staticContext)
@@ -10,10 +11,10 @@ const Status = ({ code, children }) => (
 
 
 const NotFound = () => (
-    <Status code={404}>
-    <div>
+    <Status code = { 404 }>
+      <div>
         <h1>This page is not exist :(</h1>
-    </div>
+      </div>
     </Status>
 );
 

@@ -35,26 +35,26 @@ class Single extends Component {
 
     render() {
         const { item: { url, likes, comments, id, caption} } = this.props;
-        const { add } = this;
+        const { add, increaseLikes } = this;
         return (         
-            <div className='single'>
-            <div className='single-clearFix'>
-                <div className='single-image'>
-                    <img src = { url } alt='image' />
+            <div className = 'single' >
+            <div className = 'single-clearFix' >
+                <div className = 'single-image' >
+                    <img src = { url } alt = 'image' />
                     <span>{ caption }</span>
-                    <button onClick={this.increaseLikes} className='image-likes'><img src={ like } alt='likes: '/>{likes}</button>          
+                    <button onClick = { increaseLikes } className = 'image-likes' ><img src = { like } alt='likes: '/>{ likes }</button>          
                 </div>
-                <div className='single-comments'>
+                <div className = 'single-comments' >
                 {comments.map( (item, index) => (
-                        <div className='comments-comment' key={index}>
-                            <span>{item.name}: </span> 
-                            <span>{item.comment}</span>                            
+                        <div className = 'comments-comment' key = { index } >
+                            <span>{ item.name }: </span> 
+                            <span>{ item.comment }</span>                            
                         </div>
                     ))}
-                    <div className='comments-form'> 
-                    <input type='text' placeholder='name' ref = { node => this.name = node } />
-                    <input type='text' placeholder='comment' ref = { node => this.comment = node } />
-                    <button onClick={ add }>Добавить</button>
+                    <div className = 'comments-form'> 
+                    <input type = 'text' placeholder = 'name' ref = { node => this.name = node } />
+                    <input type = 'text' placeholder = 'comment' ref = { node => this.comment = node } />
+                    <button onClick = { add } >Добавить</button>
                     </div>
                 </div>                  
             </div>

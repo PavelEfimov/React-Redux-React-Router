@@ -24,12 +24,12 @@ class App extends Component {
             <div>
                 <Title />
                     <Switch>
-                        <Route path='/' exact = {true} render={ () =>  <Main {...this.props}/> }/>
+                        <Route path = '/' exact = { true } render={ () =>  <Main { ...this.props }/> }/>
                         {data.map( (item, index) => (
-                            <Route path={`/Home/Posts/${item.id}`} render={ () => ( 
-                            <Single { ...{item, onAddComment, onIncreaseLikes} } key={index} />
-                            )}  key={index} /> ))}
-                        <Route  component={NotFound} />
+                            <Route path = {`/Home/Posts/${item.id}`} render = { () => ( 
+                                <Single { ...{ item, onAddComment, onIncreaseLikes } } key = { index } />
+                            )}  key = { index } /> ))}
+                        <Route  component = { NotFound } />
                     </Switch>
             </div>
         );
