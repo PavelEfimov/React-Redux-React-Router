@@ -24,7 +24,8 @@ class App extends Component {
             <div>
                 <Title />
                     <Switch>
-                        <Route path = '/' exact = { true } render={ () =>  <Main { ...this.props }/> }/>
+                    <Route path = '/' exact = { true } render = { () =>  <Redirect to = '/Posts' /> }/>
+                        <Route path = '/Posts' render={ () =>  <Main { ...this.props }/> }/>             
                         {data.map( (item, index) => (
                             <Route path = {`/Home/Posts/${item.id}`} render = { () => ( 
                                 <Single { ...{ item, onAddComment, onIncreaseLikes } } key = { index } />
