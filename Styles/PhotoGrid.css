@@ -107,3 +107,14 @@
     }
    
 }
+
+
+@media screen and (min-width: 100px) and (max-width: 500px) {
+    .photoGrid:nth-child(2n) {
+        margin-left: 50px;
+    }
+   
+    .photoGrid:nth-child(2n+1) {
+        margin-left: 50px;
+    }
+}

@@ -70,5 +70,6 @@ export default [
         likes: 13,
         caption: 'chto eto za hyina())(',
         comments: []
-    }
+    },
+    
 ];
