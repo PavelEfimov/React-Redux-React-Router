@@ -71,5 +71,4 @@ export default [
         caption: 'chto eto za hyina())(',
         comments: []
     },
-    
 ];

@@ -3,4 +3,9 @@
     max-width: 1000px;
     width: 100%;
     text-align: center;
+    display: flex;
+   align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid red;
 }
