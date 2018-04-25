@@ -2,7 +2,6 @@
     width: 400px;
     outline: 4px solid silver;
     margin: 0 auto;
-   
 }
 
 .single-clearFix::after {
@@ -20,18 +19,6 @@
     width: 100%;
     height: 200px;
     display: block;
-}
-
-.image-likes {
-    width: 80px;
-    height: 30px;
-    display: block;
-    margin: 10px auto 0px auto; 
-    line-height: 20px;
-    background: none;
-    border: 2px solid silver;
-    font-weight: bold;
-    outline: none;
 }
 
 .single-image > span {
@@ -53,7 +40,6 @@
 
 .image-likes:hover {
     transform: scale(1.2);
-    transition-duration: 0.3s;
     cursor: pointer;
 }
 
@@ -65,9 +51,9 @@
 
 .comments-comment {
     width: 100%;
-    height: 30px;
+    height: 32px;
     border-bottom: 1px solid silver;
-    line-height: 30px; 
+    line-height: 32px; 
     box-sizing: border-box;
     padding-left: 5px;
 }
@@ -76,17 +62,49 @@
     color: blue;
 } 
 
+.comments-form {
+    position: relative;
+}
+
 .comments-form > input {
     width: 100%;
     border: none;
-    height: 30px;
+    margin-top: 12px;
     border-bottom: 1px solid silver;
     box-sizing: border-box;
     padding-left: 5px;
+    padding-bottom: none;
     outline: none;
 }
 
-.comments-form > button {
+.label-box {
+    position: relative;
+    width: 100%;
+}
+
+label {
+    position: absolute;
+    left: 5px;
+    top: -25px;
+    pointer-events: none;
+    color: #757575;
+    transition-duration: 0.3s;
+}
+
+/*input:focus ~ .label-box label {
+    display: block;
+    font-size: 12px;
+    width: 50%;
+    transform: translateY(-5px)
+}*/
+
+.label-transform {
+    font-size: 12px;
+    width: 50%;
+    transform: translateY(-5px);
+}
+
+button {
     width: 80px;
     height: 30px;
     display: block;
@@ -96,11 +114,11 @@
     border: 2px solid silver;
     font-weight: bold;
     outline: none;
+    transition-duration: 0.3s;
 }
 
-.comments-form > button:hover {
+button:hover {
     transform: scale(1.2);
-    transition-duration: 0.3s;
     cursor: pointer;
 }
 

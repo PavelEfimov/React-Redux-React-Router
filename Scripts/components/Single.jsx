@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 
 import '../../Styles/Single.css';
 
@@ -7,7 +7,12 @@ import like from './like.png';
 class Single extends Component {
     constructor(props) {
         super(props);
-
+        this.nameRef = createRef()
+        this.commentRef = createRef()
+        this.state = {
+            name: '',
+            comment: ''
+        }
         this.changeName = e => {
             this.setState({ name: e.target.value});        
         },
@@ -18,9 +23,11 @@ class Single extends Component {
 
         this.add = () => {           
             const { item: { id }, onAddComment } = this.props;  
-            onAddComment(this.name.value, this.comment.value, id);      
-            this.name.value = '';
-            this.comment.value = '';
+            const { name, comment } = this.state;
+            onAddComment(name, comment, id);      
+            this.nameRef.current.value = '';
+            this.commentRef.current.value = '';
+            this.setState({ name: '', comment: ''});
         },
         
         this.increaseLikes = () => {
@@ -30,12 +37,13 @@ class Single extends Component {
     }
 
     componentDidMount() {
-        this.name.focus();
+        this.nameRef.current.focus();
     }
 
     render() {
         const { item: { url, likes, comments, id, caption} } = this.props;
-        const { add, increaseLikes } = this;
+        const { add, increaseLikes, changeName, changeComment } = this;
+        const { name, comment } = this.state;
         return (         
             <div className = 'single' >
             <div className = 'single-clearFix' >
@@ -52,8 +60,14 @@ class Single extends Component {
                         </div>
                     ))}
                     <div className = 'comments-form'> 
-                    <input type = 'text' placeholder = 'name' ref = { node => this.name = node } />
-                    <input type = 'text' placeholder = 'comment' ref = { node => this.comment = node } />
+                    <input type = 'text' ref = { this.nameRef } onChange = { changeName } />
+                    <div className = 'label-box'>
+                        <label  className = { name !== '' ? 'label-transform' : '' }>Your name</label>
+                    </div>
+                    <input type = 'text' ref = { this.commentRef } onChange = { changeComment } />
+                    <div className = 'label-box'>
+                        <label  className = { comment !== '' ? 'label-transform' : '' }>Your comment</label>
+                    </div>
                     <button onClick = { add } >Добавить</button>
                     </div>
                 </div>                  
@@ -62,4 +76,5 @@ class Single extends Component {
         );
     }
 }
+
 export default Single;
